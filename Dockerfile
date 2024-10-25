@@ -1,18 +1,15 @@
-# Use a base image (e.g., Node.js or Python)  
 FROM node:14  
 
-# Set the working directory  
 WORKDIR /app  
 
-# Copy package files & install dependencies  
+# Copy package.json files  
 COPY package*.json ./  
+
 RUN npm install  
 
-# Copy the rest of the application  
+# Copy the rest of the application files  
 COPY . .  
 
-# Expose the application port  
-EXPOSE 80  
+EXPOSE 8080  
 
-# Command to run the application  
-CMD ["npm", "start"]
+CMD ["node", "app.js"]  # Replace "app.js" with the entry point of your app

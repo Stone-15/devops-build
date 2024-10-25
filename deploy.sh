@@ -1,2 +1,2 @@
 #!/bin/bash  
-ssh your_user@your_ip_address 'docker-compose pull && docker-compose up -d'
+ssh root@172.18.87.194 'docker-compose pull && docker-compose up'
