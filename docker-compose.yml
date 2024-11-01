@@ -1,7 +1,7 @@
----
-version: "3.8"
-services:
-  app:
-    build: .
-    ports:
-      - 80:80
+version: '3'  
+
+services:  
+  app:  
+    build: .  
+    ports:  
+      - "80:80"  # Maps port 80 of the container to port 80 of the host

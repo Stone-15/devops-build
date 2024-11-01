@@ -1,15 +1,20 @@
+# Dockerfile  
 FROM node:14  
 
-WORKDIR /app  
+# Set the working directory  
+WORKDIR /usr/src/app  
 
-# Copy package.json files  
+# Copy package.json and package-lock.json  
 COPY package*.json ./  
 
+# Install dependencies  
 RUN npm install  
 
-# Copy the rest of the application files  
+# Copy the rest of the application code  
 COPY . .  
 
-EXPOSE 8080  
+# Expose port 80  
+EXPOSE 80  
 
-CMD ["node", "app.js"]  # Replace "app.js" with the entry point of your app
+# Command to run the application  
+CMD ["npm", "start"]
