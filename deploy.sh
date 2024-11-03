@@ -1,5 +1,3 @@
 #!/bin/bash  
-
-# deploy.sh  
-echo "Deploying Docker container..."  
+# Deploy the Docker container  
 docker-compose up -d
