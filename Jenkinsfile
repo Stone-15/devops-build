@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         REPO_URL = "https://github.com/Stone-15/devops-build.git"
+        BRANCH_NAME = "main"
         EC2_HOST = "ubuntu@43.204.236.72"
         SSH_CREDENTIALS = 'ssh-key'             // Jenkins credentials ID for the EC2 SSH key
         DOCKER_CREDENTIALS = 'dockerhub'     // Jenkins credentials ID for Docker Hub
@@ -13,7 +14,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 
-                git url: "${REPO_URL}", branch: env.BRANCH_NAME
+                git url: "${REPO_URL}", branch: "${BRANCH_NAME}
             }
         }
 
