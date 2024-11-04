@@ -61,10 +61,7 @@ pipeline {
                         ssh ${EC2_HOST} << EOF
                             # Pull the Docker image
                             docker pull ${DOCKER_USERNAME}/${IMAGE_NAME}
-
-                            # Stop existing containers and start new ones with the pulled image
-                            docker-compose down
-                            docker-compose up -d
+                            docker run -d -p 80:80 ${DOCKER_USERNAME}/${IMAGE_NAME}
                         EOF
                         """
                     }
