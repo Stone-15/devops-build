@@ -1,11 +1,7 @@
-version: '3.8'  # Specify the version of Docker Compose  
-
 services:  
   app:  
-    build: .  
+    build:  
+      context: .  
+      dockerfile: Dockerfile  
     ports:  
-      - "3000:3000"  # Map port 3000 on the host to port 3000 in the container  
-    volumes:  
-      - .:/usr/src/app  # Mount the current directory to /usr/src/app in the container  
-    environment:  
-      - NODE_ENV=production  # Example of an environment variable
+      - "80:80"

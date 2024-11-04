@@ -17,15 +17,15 @@ COPY . .
 RUN npm run build  
 
 # Stage 2: Serve the application  
-FROM serve:latest  # Use the official serve image  
+FROM serve:latest  # Ensure you have the serve image available  
 
-# Set the working directory to /usr/share/nginx/html (default for serve)  
-WORKDIR /usr/share/nginx/html  
+# Set the working directory  
+WORKDIR /usr/share/nginx/html  # Serve expects files here  
 
 # Copy the built files from the builder stage  
 COPY --from=builder /app/build .  
 
-# Expose port 80 (default port for serving)  
+# Expose port 80 for serving  
 EXPOSE 80  
 
-# Use the default CMD provided by the serve image
+# The CMD instruction is handled by the serve image automatically
