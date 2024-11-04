@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy package.json and package-lock.json  
 COPY package*.json ./  
 
-# Install app dependencies (including dev dependencies)  
+# Install app dependencies  
 RUN npm ci  
 
 # Copy the rest of your application code  
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build  
 
 # Stage 2: Serve the application using nginx  
-FROM nginx:alpine  # Ensure this line is written correctly  
+FROM nginx:alpine  # Ensure this line is correctly formatted  
 
 # Copy the built files from the builder stage to the nginx html directory  
 COPY --from=builder /app/build /usr/share/nginx/html  
