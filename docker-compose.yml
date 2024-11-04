@@ -1,7 +1,9 @@
+
 services:  
   app:  
-    build:  
-      context: .  # Path to your Dockerfile directory  
-      dockerfile: Dockerfile  # Adjust if your Dockerfile is named something else  
+    image: nginx:latest  
     ports:  
-      - "80:80"  # Map the ports
+      - "80:80"  
+    volumes:  
+      - ./build:/usr/share/nginx/html  
+    restart: always
