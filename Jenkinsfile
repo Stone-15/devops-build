@@ -23,7 +23,7 @@ pipeline {
                 script {
                     // Setting Img accordingly
                     if (env.BRANCH_NAME == 'dev') {
-                        env.IMAGE_NAME = "dev/web-app"
+                        env.IMAGE_NAME = "dev"
                     } else if (env.BRANCH_NAME == 'main') {
                         env.IMAGE_NAME = "prod/web-app"
                     } else {
