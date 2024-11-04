@@ -16,16 +16,13 @@ COPY . .
 # Build the React application  
 RUN npm run build  
 
-# Stage 2: Serve the application  
-FROM serve:latest  # Ensure you have the serve image available  
+# Stage 2: Serve the application using nginx  
+FROM nginx:alpine  # Use nginx image to serve the files  
 
-# Set the working directory  
-WORKDIR /usr/share/nginx/html  # Serve expects files here  
-
-# Copy the built files from the builder stage  
-COPY --from=builder /app/build .  
+# Copy the built files from the builder stage to the nginx html directory  
+COPY --from=builder /app/build /usr/share/nginx/html  
 
 # Expose port 80 for serving  
 EXPOSE 80  
 
-# The CMD instruction is handled by the serve image automatically
+# Use the default CMD provided by nginx
