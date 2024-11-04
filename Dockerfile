@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build  
 
 # Stage 2: Serve the application using nginx  
-FROM nginx:alpine  # Ensure this line is correct  
+FROM nginx:alpine  # Ensure this line is written correctly  
 
 # Copy the built files from the builder stage to the nginx html directory  
 COPY --from=builder /app/build /usr/share/nginx/html  
@@ -25,4 +25,4 @@ COPY --from=builder /app/build /usr/share/nginx/html
 # Expose port 80 for serving  
 EXPOSE 80  
 
-# The default command of nginx will run
+# Nginx will use the default command

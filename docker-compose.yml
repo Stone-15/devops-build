@@ -1,8 +1,7 @@
-version: '3.8'  # Optional but good to specify  
 services:  
   app:  
     build:  
-      context: .  # Ensure this is where your Dockerfile is located  
-      dockerfile: Dockerfile  # Ensure this matches your actual Dockerfile name  
+      context: .  # Path to your Dockerfile directory  
+      dockerfile: Dockerfile  # Adjust if your Dockerfile is named something else  
     ports:  
-      - "80:80"  # Bind host port to container port
+      - "80:80"  # Map the ports
