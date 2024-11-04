@@ -17,19 +17,15 @@ COPY . .
 RUN npm run build  
 
 # Stage 2: Serve the application  
-FROM node:18  
+FROM serve:latest  # Use the official serve image  
 
-# Install serve globally  
-RUN npm install -g serve  
-
-# Set the working directory to the build directory  
-WORKDIR /app/build  
+# Set the working directory to /usr/share/nginx/html (default for serve)  
+WORKDIR /usr/share/nginx/html  
 
 # Copy the built files from the builder stage  
 COPY --from=builder /app/build .  
 
-# Expose port 80  
+# Expose port 80 (default port for serving)  
 EXPOSE 80  
 
-# Command to run the app  
-CMD ["serve", "-s", ".", "-l", "80"]
+# Use the default CMD provided by the serve image
