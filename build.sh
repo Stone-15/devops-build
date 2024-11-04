@@ -1,12 +1,8 @@
-#!/bin/bash  
-# build.sh  
+#!/bin/bash
 
-# List all files in the current directory for debugging  
-echo "Current directory contents:"  
-ls -la  
+IMAGE_NAME="web-app"
 
-# Run docker-compose build  
-docker-compose build  
+# Build the Docker image
+docker build -t $IMAGE_NAME .
 
-# Run docker-compose up to start the services  
-docker-compose up -d
+echo "Docker image $IMAGE_NAME built successfully."

@@ -1,9 +1,7 @@
-
-services:  
-  app:  
-    image: nginx:latest  
-    ports:  
-      - "80:80"  
-    volumes:  
-      - ./build:/usr/share/nginx/html  
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
     restart: always
