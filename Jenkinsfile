@@ -4,7 +4,7 @@ pipeline {
     environment {
         REPO_URL = "https://github.com/Stone-15/devops-build.git"
         BRANCH_NAME = "dev"
-        EC2_HOST = "ubuntu@43.204.236.72"
+        EC2_HOST = "ubuntu@13.201.230.133"
         SSH_CREDENTIALS = 'ssh-key'             // Jenkins credentials ID for the EC2 SSH key
         DOCKER_CREDENTIALS = 'dockerhub'     // Jenkins credentials ID for Docker Hub
         DOCKER_USERNAME = 'joshdoc' // Docker Hub username
