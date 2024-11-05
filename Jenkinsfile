@@ -86,7 +86,6 @@ pipeline {
                         // Execute the command on the remote EC2 instance  
                         sh "ssh -o StrictHostKeyChecking=no -t ${EC2_HOST} '${command}'"  
                     }   
-                    }  
                     } else if (env.BRANCH_NAME == 'main') {  
                      sshagent([SSH_CREDENTIALS]) {  
                         // Define the command to be executed on the EC2 instance  
