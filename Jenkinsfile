@@ -62,6 +62,7 @@ pipeline {
                     
                 }  
             }  
+            }
         }  
 
         stage('Deploy on EC2') {  
@@ -112,5 +113,4 @@ pipeline {
             }  
         }  
     }  
-}
 }
